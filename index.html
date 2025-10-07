@@ -1,0 +1,1590 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AAQ Applied Science Unit 3 Physics - Revision Sheets</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background-color: #f3f4f6;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1152px;
+            margin: 0 auto;
+            padding: 0 16px;
+        }
+        
+        .header {
+            background: white;
+            border-bottom: 1px solid #e5e7eb;
+            padding: 16px 0;
+        }
+        
+        .header h1 {
+            font-size: 24px;
+            font-weight: bold;
+            color: #111827;
+        }
+        
+        .header p {
+            font-size: 14px;
+            color: #6b7280;
+            margin-top: 4px;
+        }
+        
+        .print-button {
+            margin-top: 12px;
+            padding: 8px 16px;
+            background-color: #2563eb;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 14px;
+        }
+        
+        .print-button:hover {
+            background-color: #1d4ed8;
+        }
+        
+        .tabs-container {
+            background: white;
+            border-bottom: 1px solid #e5e7eb;
+            padding: 8px 0;
+        }
+        
+        .tabs {
+            display: flex;
+            gap: 8px;
+            overflow-x: auto;
+        }
+        
+        .tab-button {
+            padding: 8px 16px;
+            border: none;
+            border-radius: 4px 4px 0 0;
+            font-weight: 500;
+            white-space: nowrap;
+            cursor: pointer;
+            transition: background-color 0.2s;
+            background-color: #f3f4f6;
+            color: #6b7280;
+        }
+        
+        .tab-button:hover {
+            background-color: #e5e7eb;
+        }
+        
+        .tab-button.active-A {
+            background-color: #dbeafe;
+            color: #1e3a8a;
+            border-bottom: 2px solid #1e3a8a;
+        }
+        
+        .tab-button.active-B {
+            background-color: #dcfce7;
+            color: #14532d;
+            border-bottom: 2px solid #14532d;
+        }
+        
+        .tab-button.active-C {
+            background-color: #f3e8ff;
+            color: #581c87;
+            border-bottom: 2px solid #581c87;
+        }
+        
+        .tab-button.active-CMD {
+            background-color: #f9fafb;
+            color: #111827;
+            border-bottom: 2px solid #111827;
+        }
+        
+        .content-area {
+            padding: 16px 0;
+        }
+        
+        .content-box {
+            padding: 24px;
+            border-radius: 8px;
+            border: 2px solid;
+        }
+        
+        .content-box-A {
+            background-color: #dbeafe;
+            border-color: #93c5fd;
+            color: #1e3a8a;
+        }
+        
+        .content-box-B {
+            background-color: #dcfce7;
+            border-color: #86efac;
+            color: #14532d;
+        }
+        
+        .content-box-C {
+            background-color: #f3e8ff;
+            border-color: #d8b4fe;
+            color: #581c87;
+        }
+        
+        .content-box-CMD {
+            background-color: #f9fafb;
+            border-color: #d1d5db;
+            color: #111827;
+        }
+        
+        .content-box h2 {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 16px;
+        }
+        
+        .section {
+            margin-bottom: 16px;
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        .section-header {
+            width: 100%;
+            padding: 12px 16px;
+            background: white;
+            border: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            text-align: left;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+        
+        .section-header:hover {
+            background-color: #f9fafb;
+        }
+        
+        .chevron {
+            transition: transform 0.2s;
+        }
+        
+        .chevron.up {
+            transform: rotate(180deg);
+        }
+        
+        .section-content {
+            padding: 16px;
+            background: white;
+            border-top: 1px solid #e5e7eb;
+            display: none;
+        }
+        
+        .section-content.expanded {
+            display: block;
+        }
+        
+        .key-def {
+            margin-bottom: 12px;
+            padding: 12px;
+            padding-left: 16px;
+            border-left: 4px solid #fbbf24;
+            background-color: #fef3c7;
+            border-radius: 4px;
+        }
+        
+        .key-def strong {
+            color: #78350f;
+        }
+        
+        .worked-example {
+            margin-bottom: 12px;
+            padding: 12px;
+            background-color: #dbeafe;
+            border-left: 4px solid #3b82f6;
+            border-radius: 4px;
+        }
+        
+        .worked-example strong {
+            color: #1e3a8a;
+        }
+        
+        .worked-example div {
+            font-size: 14px;
+            margin-top: 8px;
+        }
+        
+        .tip {
+            margin-bottom: 12px;
+            padding: 12px;
+            background-color: #dcfce7;
+            border-left: 4px solid #22c55e;
+            border-radius: 4px;
+        }
+        
+        .tip strong {
+            color: #14532d;
+        }
+        
+        .formula {
+            margin-bottom: 8px;
+            padding: 8px;
+            background-color: #f3f4f6;
+            border-left: 2px solid #9ca3af;
+            border-radius: 4px;
+        }
+        
+        .formula code {
+            font-family: monospace;
+            font-size: 14px;
+        }
+        
+        .formula-desc {
+            font-size: 12px;
+            color: #6b7280;
+            margin-top: 4px;
+        }
+        
+        ul.list-disc {
+            margin-left: 24px;
+            margin-top: 8px;
+        }
+        
+        ul.list-disc li {
+            margin-bottom: 4px;
+        }
+        
+        ol.list-decimal {
+            margin-left: 24px;
+            margin-top: 8px;
+        }
+        
+        .table {
+            width: 100%;
+            margin-top: 8px;
+            font-size: 14px;
+            border-collapse: collapse;
+        }
+        
+        .table th {
+            background-color: #f3f4f6;
+            padding: 8px;
+            border: 1px solid #d1d5db;
+            text-align: left;
+        }
+        
+        .table td {
+            padding: 8px;
+            border: 1px solid #d1d5db;
+        }
+        
+        .tab-content {
+            display: none;
+        }
+        
+        .tab-content.active {
+            display: block;
+        }
+        
+        .footer {
+            margin-top: 24px;
+            text-align: center;
+            font-size: 14px;
+            color: #6b7280;
+            padding-bottom: 24px;
+        }
+        
+        @media print {
+            .no-print {
+                display: none !important;
+            }
+            
+            body {
+                background: white;
+            }
+            
+            .header {
+                border: none;
+            }
+            
+            .content-box {
+                border: none;
+            }
+            
+            .section-header {
+                cursor: default;
+            }
+            
+            .section-content {
+                display: block !important;
+            }
+            
+            .chevron {
+                display: none;
+            }
+            
+            .print-break {
+                page-break-before: always;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="container">
+            <h1>AAQ Applied Science Unit 3 Physics</h1>
+            <p>Interactive Revision Summary Sheets | First Assessment: May/June 2026</p>
+            <button class="print-button no-print" onclick="window.print()">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M6 9V2h12v7M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2"></path>
+                    <rect x="6" y="14" width="12" height="8"></rect>
+                </svg>
+                Print Current Sheet
+            </button>
+        </div>
+    </div>
+    
+    <div class="tabs-container no-print">
+        <div class="container">
+            <div class="tabs">
+                <button class="tab-button active-A" data-tab="A">Waves & Optical Fibres</button>
+                <button class="tab-button" data-tab="B">Forces & Motion</button>
+                <button class="tab-button" data-tab="C">Electrical Circuits & Energy</button>
+                <button class="tab-button" data-tab="CMD">Command Words</button>
+            </div>
+        </div>
+    </div>
+    
+    <div class="content-area">
+        <div class="container">
+            <!-- Tab A: Waves & Optical Fibres -->
+            <div class="tab-content active" data-content="A">
+                <div class="content-box content-box-A">
+                    <h2>Content Area A: Waves & Optical Fibres</h2>
+                    
+                    <div class="section">
+                        <button class="section-header" onclick="toggleSection(this)">
+                            <span>A1.1 Features Common to Waves</span>
+                            <span class="chevron">▼</span>
+                        </button>
+                        <div class="section-content">
+                            <div class="key-def">
+                                <strong>Periodic time:</strong> Time taken for one complete oscillation or wave cycle
+                            </div>
+                            <div class="key-def">
+                                <strong>Wave speed:</strong> Distance travelled by a wave per unit time
+                            </div>
+                            <div class="key-def">
+                                <strong>Wavelength (λ):</strong> Distance between two consecutive points in phase on adjacent waves
+                            </div>
+                            <div class="key-def">
+                                <strong>Frequency (f):</strong> Number of complete oscillations or wave cycles per second (Hz)
+                            </div>
+                            <div class="key-def">
+                                <strong>Amplitude:</strong> Maximum displacement from equilibrium position
+                            </div>
+                            
+                            <div style="margin-bottom: 12px;">
+                                <strong>The Wave Equation:</strong>
+                                <div class="formula">
+                                    <code>v = fλ</code>
+                                    <div class="formula-desc">where v = wave speed (m/s), f = frequency (Hz), λ = wavelength (m)</div>
+                                </div>
+                            </div>
+                            
+                            <div class="worked-example">
+                                <strong>Example: Calculate wave speed</strong>
+                                <div>A wave has frequency 50 Hz and wavelength 6 m</div>
+                                <div>v = fλ = 50 × 6 = <strong>300 m/s</strong></div>
+                            </div>
+                            
+                            <div class="tip">
+                                <strong>💡 Application Tip:</strong>
+                                <div style="margin-top: 4px; font-size: 14px;">Always include units in your final answer. Remember: v in m/s, f in Hz, λ in m.</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="section">
+                        <button class="section-header" onclick="toggleSection(this)">
+                            <span>A1.2 Transverse vs Longitudinal Waves</span>
+                            <span class="chevron">▼</span>
+                        </button>
+                        <div class="section-content">
+                            <div style="margin-bottom: 12px;">
+                                <strong>Transverse waves:</strong>
+                                <ul class="list-disc">
+                                    <li>Oscillations perpendicular to direction of energy transfer</li>
+                                    <li>Examples: electromagnetic waves, water waves, waves on strings</li>
+                                    <li>Can be polarized</li>
+                                </ul>
+                            </div>
+                            
+                            <div style="margin-bottom: 12px;">
+                                <strong>Longitudinal waves:</strong>
+                                <ul class="list-disc">
+                                    <li>Oscillations parallel to direction of energy transfer</li>
+                                    <li>Examples: sound waves, ultrasound, seismic P-waves</li>
+                                    <li>Consist of compressions and rarefactions</li>
+                                    <li>Cannot be polarized</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="tip">
+                                <strong>💡 Application Tip:</strong>
+                                <div style="margin-top: 4px; font-size: 14px;">Remember which is which: TransVERSE has oscillations perpendicULAR to wave direction.</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="section">
+                        <button class="section-header" onclick="toggleSection(this)">
+                            <span>A1.3 Diffraction Gratings & Line Spectra</span>
+                            <span class="chevron">▼</span>
+                        </button>
+                        <div class="section-content">
+                            <div class="key-def">
+                                <strong>Coherence:</strong> Waves have constant phase difference
+                            </div>
+                            <div class="key-def">
+                                <strong>Path difference:</strong> Difference in distance travelled by two waves
+                            </div>
+                            <div class="key-def">
+                                <strong>Phase difference:</strong> How much one wave is ahead or behind another (measured in degrees or radians)
+                            </div>
+                            <div class="key-def">
+                                <strong>Superposition:</strong> When two or more waves meet, the resultant displacement is the sum of individual displacements
+                            </div>
+                            
+                            <div style="margin-bottom: 12px;">
+                                <strong>Diffraction gratings:</strong>
+                                <ul class="list-disc">
+                                    <li>Multiple slits that diffract light</li>
+                                    <li>Produce line emission spectra</li>
+                                    <li>Each element produces unique pattern of spectral lines</li>
+                                    <li>Used to identify elements in gases</li>
+                                </ul>
+                            </div>
+                            
+                            <div style="margin-bottom: 12px;">
+                                <strong>Emission spectra:</strong>
+                                <ul class="list-disc">
+                                    <li>Produced when electrons drop from higher to lower energy levels</li>
+                                    <li>Energy is released as photons of specific frequencies</li>
+                                    <li>Different transitions produce different wavelengths (colors)</li>
+                                    <li>Unique pattern for each element - like a fingerprint</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="tip">
+                                <strong>💡 Application Tip:</strong>
+                                <div style="margin-top: 4px; font-size: 14px;">Line spectra are used in astronomy to identify elements in stars and in chemical analysis.</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="section">
+                        <button class="section-header" onclick="toggleSection(this)">
+                            <span>A1.5 Stationary Waves & Resonance</span>
+                            <span class="chevron">▼</span>
+                        </button>
+                        <div class="section-content">
+                            <div class="key-def">
+                                <strong>Stationary wave:</strong> Wave formed by superposition of two progressive waves of same frequency travelling in opposite directions
+                            </div>
+                            <div class="key-def">
+                                <strong>Resonance:</strong> Maximum amplitude oscillation when driving frequency equals natural frequency of system
+                            </div>
+                            
+                            <div style="margin-bottom: 12px;">
+                                <strong>Features of stationary waves:</strong>
+                                <ul class="list-disc">
+                                    <li><strong>Nodes:</strong> Points of zero amplitude (destructive interference)</li>
+                                    <li><strong>Antinodes:</strong> Points of maximum amplitude (constructive interference)</li>
+                                    <li>Energy is not transferred along the wave</li>
+                                    <li>All points between nodes oscillate in phase</li>
+                                </ul>
+                            </div>
+                            
+                            <div style="margin-bottom: 12px;">
+                                <strong>Applications in musical instruments:</strong>
+                                <ul class="list-disc">
+                                    <li><strong>Strings:</strong> Guitar strings, violin strings vibrate in modes</li>
+                                    <li><strong>Pipes:</strong> Wind instruments, organ pipes produce resonant frequencies</li>
+                                    <li>Fundamental frequency and harmonics determine pitch</li>
+                                </ul>
+                            </div>
+                            
+                            <div style="margin-bottom: 12px;">
+                                <strong>Speed of wave on a string:</strong>
+                                <div class="formula">
+                                    <code>v = √(T/μ)</code>
+                                    <div class="formula-desc">where T = tension in string (N), μ = mass per unit length (kg/m)</div>
+                                </div>
+                            </div>
+                            
+                            <div class="tip">
+                                <strong>💡 Application Tip:</strong>
+                                <div style="margin-top: 4px; font-size: 14px;">In exams, be able to label nodes and antinodes on stationary wave diagrams and explain how they form.</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="section">
+                        <button class="section-header" onclick="toggleSection(this)">
+                            <span>A2 Principles of Optical Fibres</span>
+                            <span class="chevron">▼</span>
+                        </button>
+                        <div class="section-content">
+                            <div class="key-def">
+                                <strong>Refraction:</strong> Change in direction of wave when it passes from one medium to another due to change in speed
+                            </div>
+                            <div class="key-def">
+                                <strong>Total internal reflection (TIR):</strong> Complete reflection of light at boundary between two media when angle of incidence exceeds critical angle
+                            </div>
+                            <div class="key-def">
+                                <strong>Critical angle:</strong> Angle of incidence in denser medium for which angle of refraction is 90°
+                            </div>
+                            
+                            <div style="margin-bottom: 12px;">
+                                <strong>Refractive index equations:</strong>
+                                <div class="formula">
+                                    <code>n = c/v</code>
+                                    <div class="formula-desc">where n = refractive index, c = speed of light in vacuum, v = speed of light in medium</div>
+                                </div>
+                                <div class="formula">
+                                    <code>n = sin i / sin r</code>
+                                    <div class="formula-desc">where i = angle of incidence, r = angle of refraction</div>
+                                </div>
+                                <div class="formula">
+                                    <code>sin c = 1/n</code>
+                                    <div class="formula-desc">where c = critical angle, n = refractive index</div>
+                                </div>
+                            </div>
+                            
+                            <div style="margin-bottom: 12px;">
+                                <strong>Conditions for TIR:</strong>
+                                <ol class="list-decimal">
+                                    <li>Light must travel from more optically dense to less optically dense medium</li>
+                                    <li>Angle of incidence must be greater than critical angle</li>
+                                </ol>
+                            </div>
+                            
+                            <div class="worked-example">
+                                <strong>Example: Calculate critical angle</strong>
+                                <div>Glass has refractive index n = 1.5</div>
+                                <div>sin c = 1/n = 1/1.5 = 0.667</div>
+                                <div>c = sin⁻¹(0.667) = <strong>41.8°</strong></div>
+                            </div>
+                            
+                            <div style="margin-bottom: 12px;">
+                                <strong>Optical fibre structure:</strong>
+                                <ul class="list-disc">
+                                    <li><strong>Core:</strong> Inner part where light travels (higher refractive index)</li>
+                                    <li><strong>Cladding:</strong> Outer layer (lower refractive index)</li>
+                                    <li>Cladding allows TIR at smaller angles, keeping light in core</li>
+                                </ul>
+                            </div>
+                            
+                            <div style="margin-bottom: 12px;">
+                                <strong>Applications:</strong>
+                                <ul class="list-disc">
+                                    <li><strong>Communications:</strong> Internet, telephone cables (high speed data)</li>
+                                    <li><strong>Medicine:</strong> Endoscopes for internal examinations</li>
+                                    <li><strong>Engineering:</strong> Inspection of difficult-to-reach areas</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="tip">
+                                <strong>💡 Application Tip:</strong>
+                                <div style="margin-top: 4px; font-size: 14px;">Remember: TIR only works going from dense to less dense. Critical angle depends on refractive index.</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="section">
+                        <button class="section-header" onclick="toggleSection(this)">
+                            <span>A3 Electromagnetic Waves in Communication</span>
+                            <span class="chevron">▼</span>
+                        </button>
+                        <div class="section-content">
+                            <div style="margin-bottom: 12px;">
+                                <strong>Key facts:</strong>
+                                <ul class="list-disc">
+                                    <li>All EM waves travel at speed of light in vacuum: c = 3.0 × 10⁸ m/s</li>
+                                    <li>EM spectrum regions overlap</li>
+                                    <li>Different frequencies and wavelengths used for different purposes</li>
+                                </ul>
+                            </div>
+                            
+                            <div style="margin-bottom: 12px;">
+                                <strong>Inverse square law:</strong>
+                                <div class="formula">
+                                    <code>I = k/r²</code>
+                                    <div class="formula-desc">where I = intensity, k = constant, r = distance from source</div>
+                                </div>
+                                <div style="font-size: 14px; margin-top: 8px;">Intensity decreases with square of distance from source</div>
+                            </div>
+                            
+                            <div style="margin-bottom: 12px;">
+                                <strong>Communication applications:</strong>
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th>Type</th>
+                                            <th>EM Wave Used</th>
+                                            <th>Frequency Range</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Satellite/GPS</td>
+                                            <td>Microwaves/Radio</td>
+                                            <td>1-40 GHz</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Mobile phones</td>
+                                            <td>Microwaves</td>
+                                            <td>800 MHz - 2.6 GHz</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Bluetooth</td>
+                                            <td>Microwaves</td>
+                                            <td>~2.4 GHz</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Wi-Fi</td>
+                                            <td>Microwaves</td>
+                                            <td>2.4 GHz / 5 GHz</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Infrared</td>
+                                            <td>Infrared</td>
+                                            <td>Remote controls</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            
+                            <div class="tip">
+                                <strong>💡 Application Tip:</strong>
+                                <div style="margin-top: 4px; font-size: 14px;">Know the applications - exam questions often ask which EM wave is used for which technology.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Tab B: Forces & Motion -->
+            <div class="tab-content" data-content="B">
+                <div class="content-box content-box-B">
+                    <h2>Content Area B: Forces & Motion</h2>
+                    
+                    <div class="section">
+                        <button class="section-header" onclick="toggleSection(this)">
+                            <span>B1.1 Standard Units & Terminology</span>
+                            <span class="chevron">▼</span>
+                        </button>
+                        <div class="section-content">
+                            <div style="margin-bottom: 12px;">
+                                <strong>Standard SI units (must know):</strong>
+                                <ul class="list-disc">
+                                    <li><strong>u</strong> = initial velocity (m/s)</li>
+                                    <li><strong>v</strong> = final velocity (m/s)</li>
+                                    <li><strong>s</strong> = distance/displacement (m)</li>
+                                    <li><strong>t</strong> = time (s)</li>
+                                    <li><strong>a</strong> = acceleration (m/s²)</li>
+                                </ul>
+                            </div>
+                            
+                            <div style="margin-bottom: 12px;">
+                                <strong>Speed units:</strong>
+                                <ul class="list-disc">
+                                    <li>m/s (metres per second)</li>
+                                    <li>km/s (kilometres per second)</li>
+                                    <li>km/h (kilometres per hour)</li>
+                                </ul>
+                            </div>
+                            
+                            <div style="margin-bottom: 12px;">
+                                <strong>Key formulae:</strong>
+                                <div class="formula">
+                                    <code>speed = distance ÷ time</code>
+                                </div>
+                                <div class="formula">
+                                    <code>average speed = total distance ÷ total time</code>
+                                </div>
+                            </div>
+                            
+                            <div class="worked-example">
+                                <strong>Example: Calculate average speed</strong>
+                                <div>A car travels 150 km in 2 hours</div>
+                                <div>Average speed = 150 ÷ 2 = <strong>75 km/h</strong></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="section">
+                        <button class="section-header" onclick="toggleSection(this)">
+                            <span>B1.3 Vectors & Scalars</span>
+                            <span class="chevron">▼</span>
+                        </button>
+                        <div class="section-content">
+                            <div class="key-def">
+                                <strong>Scalar quantity:</strong> Has magnitude only (e.g., distance, speed, mass, time, energy)
+                            </div>
+                            <div class="key-def">
+                                <strong>Vector quantity:</strong> Has both magnitude AND direction (e.g., displacement, velocity, acceleration, force, momentum)
+                            </div>
+                            
+                            <div style="margin-bottom: 12px;">
+                                <strong>Displacement vs Distance:</strong>
+                                <ul class="list-disc">
+                                    <li><strong>Distance:</strong> Total path length travelled (scalar)</li>
+                                    <li><strong>Displacement:</strong> Straight line distance from start to finish with direction (vector)</li>
+                                </ul>
+                            </div>
+                            
+                            <div style="margin-bottom: 12px;">
+                                <strong>Velocity vs Speed:</strong>
+                                <ul class="list-disc">
+                                    <li><strong>Speed:</strong> Rate of change of distance (scalar)</li>
+                                    <li><strong>Velocity:</strong> Rate of change of displacement, includes direction (vector)</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="tip">
+                                <strong>💡 Application Tip:</strong>
+                                <div style="margin-top: 4px; font-size: 14px;">In exams, always state whether a quantity is scalar or vector if asked. Direction matters for vectors!</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="section">
+                        <button class="section-header" onclick="toggleSection(this)">
+                            <span>B1.3 Graphs of Motion</span>
+                            <span class="chevron">▼</span>
+                        </button>
+                        <div class="section-content">
+                            <div style="margin-bottom: 12px;">
+                                <strong>Displacement-time graphs:</strong>
+                                <ul class="list-disc">
+                                    <li><strong>Gradient</strong> = velocity</li>
+                                    <li>Horizontal line = stationary (zero velocity)</li>
+                                    <li>Straight sloped line = constant velocity</li>
+                                    <li>Curved line = changing velocity (acceleration)</li>
+                                </ul>
+                            </div>
+                            
+                            <div style="margin-bottom: 12px;">
+                                <strong>Velocity-time graphs:</strong>
+                                <ul class="list-disc">
+                                    <li><strong>Gradient</strong> = acceleration</li>
+                                    <li><strong>Area under graph</strong> = displacement</li>
+                                    <li>Horizontal line = constant velocity</li>
+                                    <li>Straight sloped line = constant acceleration</li>
+                                    <li>Curved line = changing acceleration</li>
+                                </ul>
+                            </div>
+                            
+                            <div style="margin-bottom: 12px;">
+                                <strong>Acceleration formula from graph:</strong>
+                                <div class="formula">
+                                    <code>a = (v - u) / t</code>
+                                    <div class="formula-desc">where a = acceleration, v = final velocity, u = initial velocity, t = time</div>
+                                </div>
+                            </div>
+                            
+                            <div class="tip">
+                                <strong>💡 Application Tip:</strong>
+                                <div style="margin-top: 4px; font-size: 14px;">Practice reading graphs! Know what gradient and area represent for each type of graph.</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="section">
+                        <button class="section-header" onclick="toggleSection(this)">
+                            <span>B1.3 Equations of Motion</span>
+                            <span class="chevron">▼</span>
+                        </button>
+                        <div class="section-content">
+                            <div style="margin-bottom: 12px;">
+                                <strong>The SUVAT equations (must memorize):</strong>
+                                <div class="formula">
+                                    <code>v = u + at</code>
+                                </div>
+                                <div class="formula">
+                                    <code>s = (u + v)t / 2</code>
+                                </div>
+                                <div class="formula">
+                                    <code>s = ut + ½at²</code>
+                                </div>
+                                <div class="formula">
+                                    <code>v² = u² + 2as</code>
+                                </div>
+                            </div>
+                            
+                            <div class="worked-example">
+                                <strong>Example: Calculate final velocity</strong>
+                                <div>A car accelerates from rest (u = 0) at 2 m/s² for 10 seconds</div>
+                                <div>v = u + at = 0 + (2 × 10) = <strong>20 m/s</strong></div>
+                            </div>
+                            
+                            <div class="worked-example">
+                                <strong>Example: Calculate distance travelled</strong>
+                                <div>Using same example: s = ut + ½at²</div>
+                                <div>s = 0 + ½(2)(10)² = 0 + (1)(100) = <strong>100 m</strong></div>
+                            </div>
+                            
+                            <div class="tip">
+                                <strong>💡 Application Tip:</strong>
+                                <div style="margin-top: 4px; font-size: 14px;">Choose the right equation! List what you know (u, v, a, s, t) and pick equation with 4 of those 5 variables.</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="section">
+                        <button class="section-header" onclick="toggleSection(this)">
+                            <span>B2.1 Newton's First Law</span>
+                            <span class="chevron">▼</span>
+                        </button>
+                        <div class="section-content">
+                            <div style="margin-bottom: 12px;">
+                                <strong>Newton's First Law:</strong>
+                                <div style="padding: 12px; background-color: #f3f4f6; border-radius: 4px; margin-top: 8px; font-style: italic;">
+                                    An object will remain at rest or continue moving at constant velocity unless acted upon by a resultant force.
+                                </div>
+                            </div>
+                            
+                            <div class="key-def">
+                                <strong>Inertia:</strong> Resistance of an object to change in motion - greater mass = greater inertia
+                            </div>
+                            
+                            <div style="margin-bottom: 12px;">
+                                <strong>Applications:</strong>
+                                <ul class="list-disc">
+                                    <li>Objects at rest stay at rest (need force to start moving)</li>
+                                    <li>Objects moving continue moving at same velocity (unless force acts)</li>
+                                    <li>Explains why seatbelts needed - body continues forward when car stops</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="tip">
+                                <strong>💡 Application Tip:</strong>
+                                <div style="margin-top: 4px; font-size: 14px;">Resultant force = 0 means constant velocity OR stationary, NOT necessarily zero velocity!</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="section">
+                        <button class="section-header" onclick="toggleSection(this)">
+                            <span>B2.2 Mass, Weight & Friction</span>
+                            <span class="chevron">▼</span>
+                        </button>
+                        <div class="section-content">
+                            <div class="key-def">
+                                <strong>Mass:</strong> Amount of matter in object, measured in kg (scalar)
+                            </div>
+                            <div class="key-def">
+                                <strong>Weight:</strong> Force due to gravity acting on mass, measured in N (vector)
+                            </div>
+                            <div class="key-def">
+                                <strong>Gravitational field strength (g):</strong> Force per unit mass, on Earth g ≈ 10 N/kg or 9.8 N/kg
+                            </div>
+                            
+                            <div style="margin-bottom: 12px;">
+                                <strong>Weight equation:</strong>
+                                <div class="formula">
+                                    <code>W = mg</code>
+                                    <div class="formula-desc">where W = weight (N), m = mass (kg), g = gravitational field strength (N/kg)</div>
+                                </div>
+                            </div>
+                            
+                            <div class="worked-example">
+                                <strong>Example: Calculate weight</strong>
+                                <div>A person has mass 70 kg, g = 10 N/kg</div>
+                                <div>W = mg = 70 × 10 = <strong>700 N</strong></div>
+                            </div>
+                            
+                            <div style="margin-bottom: 12px;">
+                                <strong>Coefficient of friction (μ):</strong>
+                                <div class="formula">
+                                    <code>F = μN</code>
+                                    <div class="formula-desc">where F = frictional force, μ = coefficient of friction, N = normal reaction force</div>
+                                </div>
+                            </div>
+                            
+                            <div style="margin-bottom: 12px;">
+                                <strong>Types of friction:</strong>
+                                <ul class="list-disc">
+                                    <li><strong>Static friction:</strong> Force needed to START movement (μ measured just before object moves)</li>
+                                    <li><strong>Dynamic/kinetic friction:</strong> Force needed to KEEP moving at constant velocity</li>
+                                    <li>Static friction coefficient is usually greater than kinetic</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="tip">
+                                <strong>💡 Application Tip:</strong>
+                                <div style="margin-top: 4px; font-size: 14px;">On horizontal surface, normal reaction N = weight W. For friction, use F = μN.</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="section">
+                        <button class="section-header" onclick="toggleSection(this)">
+                            <span>B2.4-B2.5 Momentum & Newton's Second Law</span>
+                            <span class="chevron">▼</span>
+                        </button>
+                        <div class="section-content">
+                            <div class="key-def">
+                                <strong>Momentum:</strong> Product of mass and velocity, p = mv, measured in kg m/s (vector quantity)
+                            </div>
+                            
+                            <div style="margin-bottom: 12px;">
+                                <strong>Newton's Second Law:</strong>
+                                <div style="padding: 12px; background-color: #f3f4f6; border-radius: 4px; margin-top: 8px;">
+                                    Force is proportional to rate of change of momentum
+                                </div>
+                                <div class="formula">
+                                    <code>F = (mv - mu) / t</code>
+                                    <div class="formula-desc">Force = change in momentum / time</div>
+                                </div>
+                                <div class="formula">
+                                    <code>F = ma</code>
+                                    <div class="formula-desc">For constant mass, force = mass × acceleration</div>
+                                </div>
+                            </div>
+                            
+                            <div class="worked-example">
+                                <strong>Example: Calculate force</strong>
+                                <div>A car of mass 1000 kg accelerates from 0 to 20 m/s in 5 seconds</div>
+                                <div>F = (mv - mu) / t = (1000 × 20 - 0) / 5 = 20000 / 5 = <strong>4000 N</strong></div>
+                                <div>Or: a = (v-u)/t = 20/5 = 4 m/s², F = ma = 1000 × 4 = <strong>4000 N</strong></div>
+                            </div>
+                            
+                            <div style="margin-bottom: 12px;">
+                                <strong>Impact force controls in vehicles:</strong>
+                                <ul class="list-disc">
+                                    <li><strong>Air bags:</strong> Increase time of collision, reducing force</li>
+                                    <li><strong>Seat belts:</strong> Increase time to stop, spread force over body</li>
+                                    <li><strong>Crumple zones:</strong> Increase collision time, absorb energy</li>
+                                    <li><strong>Helmets:</strong> Increase impact time, reduce force on head</li>
+                                </ul>
+                            </div>
+                            
+                            <div style="margin-bottom: 12px;">
+                                <strong>Key principle:</strong> Same change in momentum over LONGER time = SMALLER force
+                            </div>
+                            
+                            <div class="tip">
+                                <strong>💡 Application Tip:</strong>
+                                <div style="margin-top: 4px; font-size: 14px;">High speed + low mass OR low speed + high mass both give large momentum. Safety devices increase impact time.</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="section">
+                        <button class="section-header" onclick="toggleSection(this)">
+                            <span>B2.6-B2.7 Newton's Third Law & Resultant Forces</span>
+                            <span class="chevron">▼</span>
+                        </button>
+                        <div class="section-content">
+                            <div style="margin-bottom: 12px;">
+                                <strong>Newton's Third Law:</strong>
+                                <div style="padding: 12px; background-color: #f3f4f6; border-radius: 4px; margin-top: 8px; font-style: italic;">
+                                    For every action, there is an equal and opposite reaction
+                                </div>
+                            </div>
+                            
+                            <div style="margin-bottom: 12px;">
+                                <strong>Key points:</strong>
+                                <ul class="list-disc">
+                                    <li>Action and reaction forces are equal in magnitude</li>
+                                    <li>Forces act in opposite directions</li>
+                                    <li>Forces act on DIFFERENT objects</li>
+                                    <li>Forces are same type (both contact or both non-contact)</li>
+                                </ul>
+                            </div>
+                            
+                            <div style="margin-bottom: 12px;">
+                                <strong>Resultant force and motion:</strong>
+                                <ul class="list-disc">
+                                    <li><strong>F = 0 (balanced forces):</strong> Constant velocity OR stationary</li>
+                                    <li><strong>F ≠ 0 (unbalanced forces):</strong> Object accelerates in direction of resultant force</li>
+                                </ul>
+                            </div>
+                            
+                            <div style="margin-bottom: 12px;">
+                                <strong>Terminal velocity:</strong>
+                                <ul class="list-disc">
+                                    <li>Occurs when drag force = weight</li>
+                                    <li>Resultant force = 0, so no acceleration</li>
+                                    <li>Object falls at constant maximum velocity</li>
+                                    <li>Applications: falling parachutes, vehicles at maximum speed, objects in liquids</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="tip">
+                                <strong>💡 Application Tip:</strong>
+                                <div style="margin-top: 4px; font-size: 14px;">Terminal velocity: weight down = drag up, forces balanced, constant velocity NOT zero velocity.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Tab C: Electrical Circuits & Energy -->
+            <div class="tab-content" data-content="C">
+                <div class="content-box content-box-C">
+                    <h2>Content Area C: Electrical Circuits & Energy</h2>
+                    
+                    <div class="section">
+                        <button class="section-header" onclick="toggleSection(this)">
+                            <span>C1 Electrical Components & Circuit Symbols</span>
+                            <span class="chevron">▼</span>
+                        </button>
+                        <div class="section-content">
+                            <div style="margin-bottom: 12px;">
+                                <strong>Must know circuit symbols for:</strong>
+                                <ul class="list-disc">
+                                    <li>Cell, battery, power supply</li>
+                                    <li>Switch (open/closed)</li>
+                                    <li>Lamp/bulb</li>
+                                    <li>Fixed resistor, variable resistor</li>
+                                    <li>Ammeter, voltmeter</li>
+                                    <li>Diode, LED</li>
+                                    <li>Thermistor, LDR (Light Dependent Resistor)</li>
+                                </ul>
+                            </div>
+                            
+                            <div style="margin-bottom: 12px;">
+                                <strong>Key terminology:</strong>
+                                <ul class="list-disc">
+                                    <li><strong>Current (I):</strong> Rate of flow of charge, measured in amperes/amps (A)</li>
+                                    <li><strong>Potential difference/Voltage (V):</strong> Energy transferred per unit charge, measured in volts (V)</li>
+                                    <li><strong>Resistance (R):</strong> Opposition to current flow, measured in ohms (Ω)</li>
+                                    <li><strong>Power (P):</strong> Rate of energy transfer, measured in watts (W)</li>
+                                    <li><strong>Energy (E):</strong> Measured in joules (J)</li>
+                                </ul>
+                            </div>
+                            
+                            <div style="margin-bottom: 12px;">
+                                <strong>Measuring in circuits:</strong>
+                                <ul class="list-disc">
+                                    <li><strong>Ammeter:</strong> Connected in SERIES to measure current</li>
+                                    <li><strong>Voltmeter:</strong> Connected in PARALLEL to measure potential difference</li>
+                                    <li><strong>Ohmmeter:</strong> Measures resistance of component</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="tip">
+                                <strong>💡 Application Tip:</strong>
+                                <div style="margin-top: 4px; font-size: 14px;">Remember: Ammeter in Series, Voltmeter in Parallel. Current is SAME in series, Voltage is SAME in parallel.</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="section">
+                        <button class="section-header" onclick="toggleSection(this)">
+                            <span>C1.4 Special Components</span>
+                            <span class="chevron">▼</span>
+                        </button>
+                        <div class="section-content">
+                            <div style="margin-bottom: 12px;">
+                                <strong>Filament lamp:</strong>
+                                <ul class="list-disc">
+                                    <li>Resistance increases with temperature</li>
+                                    <li>Current increases, lamp heats up, resistance increases</li>
+                                    <li>Non-linear I-V characteristic</li>
+                                </ul>
+                            </div>
+                            
+                            <div style="margin-bottom: 12px;">
+                                <strong>Diode:</strong>
+                                <ul class="list-disc">
+                                    <li>Allows current in one direction only</li>
+                                    <li>High resistance in reverse direction</li>
+                                    <li>Used for rectification (converting AC to DC)</li>
+                                </ul>
+                            </div>
+                            
+                            <div style="margin-bottom: 12px;">
+                                <strong>Thermistor:</strong>
+                                <ul class="list-disc">
+                                    <li>Resistance decreases as temperature increases</li>
+                                    <li>Used in temperature sensors, thermostats</li>
+                                </ul>
+                            </div>
+                            
+                            <div style="margin-bottom: 12px;">
+                                <strong>Light Dependent Resistor (LDR):</strong>
+                                <ul class="list-disc">
+                                    <li>Resistance decreases as light intensity increases</li>
+                                    <li>Used in automatic lighting, light sensors</li>
+                                </ul>
+                            </div>
+                            
+                            <div style="margin-bottom: 12px;">
+                                <strong>Light Emitting Diode (LED):</strong>
+                                <ul class="list-disc">
+                                    <li>Emits light when current flows through</li>
+                                    <li>Low power consumption</li>
+                                    <li>Used in displays, indicators, lighting</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="tip">
+                                <strong>💡 Application Tip:</strong>
+                                <div style="margin-top: 4px; font-size: 14px;">Know how resistance changes: Thermistor and LDR resistance DECREASES with temp/light increase.</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="section">
+                        <button class="section-header" onclick="toggleSection(this)">
+                            <span>C2 Electrical Equations</span>
+                            <span class="chevron">▼</span>
+                        </button>
+                        <div class="section-content">
+                            <div style="margin-bottom: 12px;">
+                                <strong>Essential formulae (must memorize):</strong>
+                                <div class="formula">
+                                    <code>V = IR</code>
+                                    <div class="formula-desc">Voltage = Current × Resistance (Ohm's Law)</div>
+                                </div>
+                                <div class="formula">
+                                    <code>P = IV</code>
+                                    <div class="formula-desc">Power = Current × Voltage</div>
+                                </div>
+                                <div class="formula">
+                                    <code>P = E/t</code>
+                                    <div class="formula-desc">Power = Energy / time</div>
+                                </div>
+                                <div class="formula">
+                                    <code>E = VIt</code>
+                                    <div class="formula-desc">Energy = Voltage × Current × time</div>
+                                </div>
+                            </div>
+                            
+                            <div class="worked-example">
+                                <strong>Example: Calculate current</strong>
+                                <div>A 12V battery powers a 4Ω resistor</div>
+                                <div>V = IR, so I = V/R = 12/4 = <strong>3 A</strong></div>
+                            </div>
+                            
+                            <div class="worked-example">
+                                <strong>Example: Calculate power</strong>
+                                <div>A lamp operates at 230V with current 0.5A</div>
+                                <div>P = IV = 0.5 × 230 = <strong>115 W</strong></div>
+                            </div>
+                            
+                            <div class="worked-example">
+                                <strong>Example: Calculate energy transferred</strong>
+                                <div>A 12V, 2A device runs for 5 minutes (300s)</div>
+                                <div>E = VIt = 12 × 2 × 300 = <strong>7200 J</strong></div>
+                            </div>
+                            
+                            <div class="tip">
+                                <strong>💡 Application Tip:</strong>
+                                <div style="margin-top: 4px; font-size: 14px;">Triangle method: Cover what you want to find, what's left is the formula. For V=IR: cover V, you see I×R.</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="section">
+                        <button class="section-header" onclick="toggleSection(this)">
+                            <span>C3 Electrical Energy Usage</span>
+                            <span class="chevron">▼</span>
+                        </button>
+                        <div class="section-content">
+                            <div style="margin-bottom: 12px;">
+                                <strong>Calculating energy in kilowatt-hours (kWh):</strong>
+                                <div class="formula">
+                                    <code>Energy (kWh) = Power (kW) × time (h)</code>
+                                </div>
+                            </div>
+                            
+                            <div class="worked-example">
+                                <strong>Example: Calculate energy usage</strong>
+                                <div>A 2kW heater runs for 3 hours</div>
+                                <div>Energy = 2 × 3 = <strong>6 kWh</strong></div>
+                                <div>If electricity costs 15p per kWh: Cost = 6 × 15 = <strong>90p</strong></div>
+                            </div>
+                            
+                            <div style="margin-bottom: 12px;">
+                                <strong>Converting between units:</strong>
+                                <ul class="list-disc">
+                                    <li>1 kWh = 1000 W × 3600 s = 3,600,000 J = 3.6 MJ</li>
+                                    <li>To convert kW to W: multiply by 1000</li>
+                                    <li>To convert hours to seconds: multiply by 3600</li>
+                                </ul>
+                            </div>
+                            
+                            <div style="margin-bottom: 12px;">
+                                <strong>Fuses:</strong>
+                                <ul class="list-disc">
+                                    <li>Safety device that melts if current too high</li>
+                                    <li>Choose fuse rating just above normal operating current</li>
+                                    <li>Common ratings: 3A, 5A, 13A</li>
+                                    <li>Calculate: I = P/V to find current, then choose next fuse up</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="worked-example">
+                                <strong>Example: Choose correct fuse</strong>
+                                <div>A 2300W kettle operates at 230V</div>
+                                <div>I = P/V = 2300/230 = 10A</div>
+                                <div>Choose <strong>13A fuse</strong> (next size up from 10A)</div>
+                            </div>
+                            
+                            <div class="tip">
+                                <strong>💡 Application Tip:</strong>
+                                <div style="margin-top: 4px; font-size: 14px;">For domestic appliances, calculate current then choose 3A, 5A or 13A fuse - whichever is next up.</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="section">
+                        <button class="section-header" onclick="toggleSection(this)">
+                            <span>C4 Temperature Change & Specific Heat Capacity</span>
+                            <span class="chevron">▼</span>
+                        </button>
+                        <div class="section-content">
+                            <div class="key-def">
+                                <strong>Specific heat capacity (c):</strong> Energy needed to raise temperature of 1 kg of substance by 1 K (or 1°C), units: J kg⁻¹ K⁻¹
+                            </div>
+                            
+                            <div style="margin-bottom: 12px;">
+                                <strong>Temperature conversion:</strong>
+                                <div class="formula">
+                                    <code>Temperature in K = Temperature in °C + 273</code>
+                                </div>
+                                <div style="font-size: 14px; margin-top: 4px;">0°C = 273 K, 100°C = 373 K</div>
+                            </div>
+                            
+                            <div style="margin-bottom: 12px;">
+                                <strong>Thermal energy equation:</strong>
+                                <div class="formula">
+                                    <code>ΔQ = mcΔT</code>
+                                    <div class="formula-desc">where ΔQ = thermal energy (J), m = mass (kg), c = specific heat capacity (J kg⁻¹ K⁻¹), ΔT = temperature change (K or °C)</div>
+                                </div>
+                            </div>
+                            
+                            <div class="worked-example">
+                                <strong>Example: Calculate energy to heat water</strong>
+                                <div>Heat 2 kg of water from 20°C to 100°C</div>
+                                <div>Specific heat capacity of water = 4200 J kg⁻¹ K⁻¹</div>
+                                <div>ΔT = 100 - 20 = 80 K</div>
+                                <div>ΔQ = mcΔT = 2 × 4200 × 80 = <strong>672,000 J = 672 kJ</strong></div>
+                            </div>
+                            
+                            <div style="margin-bottom: 12px;">
+                                <strong>Common specific heat capacities to know:</strong>
+                                <ul class="list-disc">
+                                    <li>Water: 4200 J kg⁻¹ K⁻¹ (very high - water good for cooling/heating)</li>
+                                    <li>Copper: ~390 J kg⁻¹ K⁻¹</li>
+                                    <li>Aluminum: ~900 J kg⁻¹ K⁻¹</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="tip">
+                                <strong>💡 Application Tip:</strong>
+                                <div style="margin-top: 4px; font-size: 14px;">High specific heat capacity means substance needs lots of energy to change temperature (water is excellent coolant).</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="section">
+                        <button class="section-header" onclick="toggleSection(this)">
+                            <span>C5 Change of State & Latent Heat</span>
+                            <span class="chevron">▼</span>
+                        </button>
+                        <div class="section-content">
+                            <div class="key-def">
+                                <strong>Specific latent heat:</strong> Energy needed to change state of 1 kg of substance at constant temperature, units: J kg⁻¹
+                            </div>
+                            <div class="key-def">
+                                <strong>Specific latent heat of fusion:</strong> Energy to change 1 kg solid to liquid at melting point
+                            </div>
+                            <div class="key-def">
+                                <strong>Specific latent heat of vaporisation:</strong> Energy to change 1 kg liquid to gas at boiling point
+                            </div>
+                            
+                            <div style="margin-bottom: 12px;">
+                                <strong>Latent heat equation:</strong>
+                                <div class="formula">
+                                    <code>ΔQ = mL</code>
+                                    <div class="formula-desc">where ΔQ = thermal energy (J), m = mass (kg), L = specific latent heat (J kg⁻¹)</div>
+                                </div>
+                            </div>
+                            
+                            <div class="worked-example">
+                                <strong>Example: Calculate energy to boil water</strong>
+                                <div>Boil 0.5 kg of water at 100°C to steam at 100°C</div>
+                                <div>Specific latent heat of vaporisation of water = 2,260,000 J kg⁻¹</div>
+                                <div>ΔQ = mL = 0.5 × 2,260,000 = <strong>1,130,000 J = 1.13 MJ</strong></div>
+                            </div>
+                            
+                            <div style="margin-bottom: 12px;">
+                                <strong>Key points about state changes:</strong>
+                                <ul class="list-disc">
+                                    <li>Temperature stays constant during state change</li>
+                                    <li>Energy goes into breaking/forming bonds, not increasing temperature</li>
+                                    <li>Latent heat of vaporisation > latent heat of fusion</li>
+                                    <li>More energy needed to boil than to melt</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="tip">
+                                <strong>💡 Application Tip:</strong>
+                                <div style="margin-top: 4px; font-size: 14px;">During melting/boiling, temperature constant even though energy being added. Energy breaks bonds.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Tab CMD: Command Words -->
+            <div class="tab-content" data-content="CMD">
+                <div class="content-box content-box-CMD">
+                    <h2>Command Words</h2>
+                    
+                    <div class="section">
+                        <button class="section-header" onclick="toggleSection(this)">
+                            <span>Critical Command Words - Exact Definitions</span>
+                            <span class="chevron">▼</span>
+                        </button>
+                        <div class="section-content">
+                            <div style="margin-bottom: 12px; padding: 12px; background-color: #fee2e2; border-left: 4px solid #ef4444; border-radius: 4px;">
+                                <strong style="color: #991b1b;">⚠️ These definitions are from official Pearson documentation</strong>
+                                <div style="margin-top: 4px; font-size: 14px;">Understanding these precisely is essential for exam success</div>
+                            </div>
+                            
+                            <div style="margin-bottom: 16px; padding: 12px; background: white; border: 1px solid #e5e7eb; border-radius: 4px;">
+                                <strong style="font-size: 18px;">Calculate</strong>
+                                <p style="margin-top: 4px;">Obtain numerical answer, showing relevant working and appropriate units where required</p>
+                                <div style="margin-top: 8px; font-size: 14px; color: #6b7280;">Always show working. Always include units.</div>
+                            </div>
+                            
+                            <div style="margin-bottom: 16px; padding: 12px; background: white; border: 1px solid #e5e7eb; border-radius: 4px;">
+                                <strong style="font-size: 18px;">Compare</strong>
+                                <p style="margin-top: 4px;">Look for similarities AND differences. Answer must relate to both/all things mentioned</p>
+                                <div style="margin-top: 8px; font-size: 14px; color: #6b7280;">Must discuss BOTH items. Use "whereas", "however", "in contrast".</div>
+                            </div>
+                            
+                            <div style="margin-bottom: 16px; padding: 12px; background: white; border: 1px solid #e5e7eb; border-radius: 4px;">
+                                <strong style="font-size: 18px;">Describe</strong>
+                                <p style="margin-top: 4px;">Give an account of something. Statements need to be developed but don't need justification</p>
+                                <div style="margin-top: 8px; font-size: 14px; color: #6b7280;">Say WHAT happens, not WHY. No reasoning needed.</div>
+                            </div>
+                            
+                            <div style="margin-bottom: 16px; padding: 12px; background: white; border: 1px solid #e5e7eb; border-radius: 4px;">
+                                <strong style="font-size: 18px;">Explain</strong>
+                                <p style="margin-top: 4px;">Requires justification/exemplification. Must contain reasoning. Mark scheme:</p>
+                                <ul class="list-disc" style="margin-left: 24px; margin-top: 4px; font-size: 14px;">
+                                    <li>1 mark: Identification of point</li>
+                                    <li>2 marks: Identification + linked justification</li>
+                                    <li>3 marks: Identification + two linked justifications OR further development</li>
+                                    <li>4 marks: Two identifications with expansions OR one with three detailed points</li>
+                                </ul>
+                                <div style="margin-top: 8px; font-size: 14px; color: #6b7280;">Use "because", "this is due to", "as a result". Link statements.</div>
+                            </div>
+                            
+                            <div style="margin-bottom: 16px; padding: 12px; background: white; border: 1px solid #e5e7eb; border-radius: 4px;">
+                                <strong style="font-size: 18px;">Evaluate</strong>
+                                <p style="margin-top: 4px;">Review information, bring together to form conclusion. Use evidence including strengths, weaknesses, alternatives. Make supported judgement</p>
+                                <div style="margin-top: 8px; font-size: 14px; color: #6b7280;">Consider multiple perspectives. Make judgements. Support with evidence.</div>
+                            </div>
+                            
+                            <div style="margin-bottom: 16px; padding: 12px; background: white; border: 1px solid #e5e7eb; border-radius: 4px;">
+                                <strong style="font-size: 18px;">Discuss</strong>
+                                <p style="margin-top: 4px;">Identify the issue. Explore all aspects. Investigate by reasoning or argument. Does NOT require conclusion</p>
+                                <div style="margin-top: 8px; font-size: 14px; color: #6b7280;">Present multiple viewpoints. No single answer required.</div>
+                            </div>
+                            
+                            <div style="margin-bottom: 16px; padding: 12px; background: white; border: 1px solid #e5e7eb; border-radius: 4px;">
+                                <strong style="font-size: 18px;">Show that</strong>
+                                <p style="margin-top: 4px;">Prove numerical figure is as stated. Answer must be to at least ONE MORE SIGNIFICANT FIGURE than stated in question</p>
+                                <div style="margin-top: 8px; font-size: 14px; color: #6b7280;">Calculate to higher precision than given answer.</div>
+                            </div>
+                            
+                            <div style="margin-bottom: 16px; padding: 12px; background: white; border: 1px solid #e5e7eb; border-radius: 4px;">
+                                <strong style="font-size: 18px;">Sketch</strong>
+                                <p style="margin-top: 4px;">Produce freehand drawing showing trend line. Axes labelled but not scaled</p>
+                                <div style="margin-top: 8px; font-size: 14px; color: #6b7280;">Don't need precise plotting - show general shape and label axes.</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="section">
+                        <button class="section-header" onclick="toggleSection(this)">
+                            <span>Common Physics Exam Errors</span>
+                            <span class="chevron">▼</span>
+                        </button>
+                        <div class="section-content">
+                            <div style="margin-bottom: 12px; padding: 12px; background-color: #fef3c7; border-left: 4px solid #fbbf24; border-radius: 4px;">
+                                <strong>❌ Error #1: Missing or incorrect units</strong>
+                                <p style="margin-top: 4px; font-size: 14px;">Especially common in physics! Every answer needs correct units.</p>
+                                <p style="margin-top: 4px; font-size: 14px; font-weight: 600;">✓ Fix: Write units next to every number in working AND in final answer</p>
+                            </div>
+                            
+                            <div style="margin-bottom: 12px; padding: 12px; background-color: #fef3c7; border-left: 4px solid #fbbf24; border-radius: 4px;">
+                                <strong>❌ Error #2: Not showing working</strong>
+                                <p style="margin-top: 4px; font-size: 14px;">Physics calculations MUST show every step to get method marks.</p>
+                                <p style="margin-top: 4px; font-size: 14px; font-weight: 600;">✓ Fix: Write formula, substitute values with units, show calculation</p>
+                            </div>
+                            
+                            <div style="margin-bottom: 12px; padding: 12px; background-color: #fef3c7; border-left: 4px solid #fbbf24; border-radius: 4px;">
+                                <strong>❌ Error #3: Using wrong formula</strong>
+                                <p style="margin-top: 4px; font-size: 14px;">Students often mix up similar formulae or use wrong SUVAT equation.</p>
+                                <p style="margin-top: 4px; font-size: 14px; font-weight: 600;">✓ Fix: List known variables (u,v,a,s,t), identify what's missing, choose equation with 4 of the 5</p>
+                            </div>
+                            
+                            <div style="margin-bottom: 12px; padding: 12px; background-color: #fef3c7; border-left: 4px solid #fbbf24; border-radius: 4px;">
+                                <strong>❌ Error #4: Confusing scalar and vector</strong>
+                                <p style="margin-top: 4px; font-size: 14px;">Mixing up distance/displacement or speed/velocity.</p>
+                                <p style="margin-top: 4px; font-size: 14px; font-weight: 600;">✓ Fix: Remember vectors need direction. Displacement and velocity are vectors.</p>
+                            </div>
+                            
+                            <div style="margin-bottom: 12px; padding: 12px; background-color: #fef3c7; border-left: 4px solid #fbbf24; border-radius: 4px;">
+                                <strong>❌ Error #5: Not converting units</strong>
+                                <p style="margin-top: 4px; font-size: 14px;">Using km/h with m/s, or minutes with seconds, or cm with m.</p>
+                                <p style="margin-top: 4px; font-size: 14px; font-weight: 600;">✓ Fix: Convert ALL to standard SI units BEFORE calculating</p>
+                            </div>
+                            
+                            <div style="margin-bottom: 12px; padding: 12px; background-color: #fef3c7; border-left: 4px solid #fbbf24; border-radius: 4px;">
+                                <strong>❌ Error #6: Sign errors in calculations</strong>
+                                <p style="margin-top: 4px; font-size: 14px;">Especially with acceleration and forces in opposite directions.</p>
+                                <p style="margin-top: 4px; font-size: 14px; font-weight: 600;">✓ Fix: Define positive direction first, use negative for opposite direction</p>
+                            </div>
+                            
+                            <div style="margin-bottom: 12px; padding: 12px; background-color: #fef3c7; border-left: 4px solid #fbbf24; border-radius: 4px;">
+                                <strong>❌ Error #7: Misreading graphs</strong>
+                                <p style="margin-top: 4px; font-size: 14px;">Confusing what gradient and area represent on different graphs.</p>
+                                <p style="margin-top: 4px; font-size: 14px; font-weight: 600;">✓ Fix: Displacement-time: gradient = velocity. Velocity-time: gradient = acceleration, area = distance</p>
+                            </div>
+                            
+                            <div style="margin-bottom: 12px; padding: 12px; background-color: #fef3c7; border-left: 4px solid #fbbf24; border-radius: 4px;">
+                                <strong>❌ Error #8: Incorrect significant figures</strong>
+                                <p style="margin-top: 4px; font-size: 14px;">Giving too many or too few significant figures in final answer.</p>
+                                <p style="margin-top: 4px; font-size: 14px; font-weight: 600;">✓ Fix: Match significant figures to data given (usually 2 or 3 SF)</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="section">
+                        <button class="section-header" onclick="toggleSection(this)">
+                            <span>Essential Physics Formulae Summary</span>
+                            <span class="chevron">▼</span>
+                        </button>
+                        <div class="section-content">
+                            <div style="margin-bottom: 12px;">
+                                <strong>Waves:</strong>
+                                <ul class="list-disc" style="font-family: monospace; font-size: 14px;">
+                                    <li>v = fλ</li>
+                                    <li>n = c/v = sin i / sin r</li>
+                                    <li>sin c = 1/n</li>
+                                    <li>I = k/r²</li>
+                                </ul>
+                            </div>
+                            
+                            <div style="margin-bottom: 12px;">
+                                <strong>Motion:</strong>
+                                <ul class="list-disc" style="font-family: monospace; font-size: 14px;">
+                                    <li>v = u + at</li>
+                                    <li>s = (u + v)t / 2</li>
+                                    <li>s = ut + ½at²</li>
+                                    <li>v² = u² + 2as</li>
+                                </ul>
+                            </div>
+                            
+                            <div style="margin-bottom: 12px;">
+                                <strong>Forces:</strong>
+                                <ul class="list-disc" style="font-family: monospace; font-size: 14px;">
+                                    <li>W = mg</li>
+                                    <li>F = μN</li>
+                                    <li>p = mv</li>
+                                    <li>F = ma</li>
+                                    <li>F = (mv - mu) / t</li>
+                                </ul>
+                            </div>
+                            
+                            <div style="margin-bottom: 12px;">
+                                <strong>Electricity:</strong>
+                                <ul class="list-disc" style="font-family: monospace; font-size: 14px;">
+                                    <li>V = IR</li>
+                                    <li>P = IV</li>
+                                    <li>P = E/t</li>
+                                    <li>E = VIt</li>
+                                </ul>
+                            </div>
+                            
+                            <div style="margin-bottom: 12px;">
+                                <strong>Energy:</strong>
+                                <ul class="list-disc" style="font-family: monospace; font-size: 14px;">
+                                    <li>ΔQ = mcΔT</li>
+                                    <li>ΔQ = mL</li>
+                                    <li>T(K) = T(°C) + 273</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="footer no-print">
+        <p>Click sections to expand/collapse • Use Print button for hard copy</p>
+        <p style="margin-top: 8px;">Based on Pearson AAQ Applied Science Unit 3 specification and mark scheme language</p>
+    </div>
+    
+    <script>
+        function toggleSection(button) {
+            const content = button.nextElementSibling;
+            const chevron = button.querySelector('.chevron');
+            
+            if (content.classList.contains('expanded')) {
+                content.classList.remove('expanded');
+                chevron.classList.remove('up');
+            } else {
+                content.classList.add('expanded');
+                chevron.classList.add('up');
+            }
+        }
+        
+        // Tab switching functionality
+        const tabButtons = document.querySelectorAll('.tab-button');
+        const tabContents = document.querySelectorAll('.tab-content');
+        
+        tabButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const targetTab = button.getAttribute('data-tab');
+                
+                // Remove active class from all tabs and contents
+                tabButtons.forEach(btn => {
+                    btn.className = 'tab-button';
+                });
+                tabContents.forEach(content => {
+                    content.classList.remove('active');
+                });
+                
+                // Add active class to clicked tab and corresponding content
+                button.classList.add(`active-${targetTab}`);
+                document.querySelector(`[data-content="${targetTab}"]`).classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>
